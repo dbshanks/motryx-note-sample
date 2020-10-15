@@ -22,11 +22,17 @@ const BottomNav = () => {
     <BottomNavigation className={classes.root} showLabels>
       <BottomNavigationAction
         label='New Note'
-        icon={<NoteIcon />}
+        icon={<NoteIcon color='secondary' fontSize='large' />}
         onClick={handleOpen}
       />
-      <BottomNavigationAction label='Home' icon={<HomeIcon />} />
-      <BottomNavigationAction label='Nearby' icon={<LocationOnIcon />} />
+      <BottomNavigationAction
+        label='Home'
+        icon={<HomeIcon color='secondary' fontSize='large' />}
+      />
+      <BottomNavigationAction
+        label='Nearby'
+        icon={<LocationOnIcon color='secondary' fontSize='large' />}
+      />
       <InputModal handleClose={handleClose} open={open} />
     </BottomNavigation>
   )

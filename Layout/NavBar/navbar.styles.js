@@ -4,6 +4,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  logo: {
+    width: '8rem',
+  },
   appbar: {
     backgroundColor: theme.palette.common.white,
     color: theme.palette.common.black,

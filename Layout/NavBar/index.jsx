@@ -16,7 +16,7 @@ const NavBar = () => {
     <div className={classes.root}>
       <AppBar position='fixed' elevation={0} className={classes.appbar}>
         <Toolbar className={classes.toolbar}>
-          <Typography variant='h6'>NoT</Typography>
+          <img src='./logo.svg' alt='Note Logo' className={classes.logo} />
           <IconButton edge='start' aria-label='menu'>
             <MenuIcon />
           </IconButton>

@@ -8,6 +8,9 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  logo: {
+    opacity: 0.2,
+  },
 })
 
 export default useStyles
