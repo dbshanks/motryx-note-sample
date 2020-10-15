@@ -9,10 +9,14 @@ const NoteSchema = {
     type: String,
     required: [true, 'A note needs a note.'],
   },
-  createdAt: {
-    type: Date,
-    required: false,
-  },
+  // color: {
+  //   type: String,
+  //   required: true,
+  // },
+  // createdAt: {
+  //   type: Date,
+  //   required: false,
+  // },
 }
 
 module.exports = mongoose.models.Notes || mongoose.model('Note', NoteSchema)
