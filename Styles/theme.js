@@ -21,7 +21,7 @@ const theme = createMuiTheme({
     },
     common: {
       black: '#212121',
-      white: '#fafafa',
+      white: '#FFFFFF',
     },
   },
 })
