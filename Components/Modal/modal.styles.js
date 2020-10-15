@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
   textField: {
-    width: '30rem',
+    width: '100%',
     backgroundColor: theme.palette.common.white,
     marginBottom: '1rem',
   },

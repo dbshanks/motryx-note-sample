@@ -9,10 +9,10 @@ const NoteSchema = {
     type: String,
     required: [true, 'A note needs a note.'],
   },
-  // color: {
-  //   type: String,
-  //   required: true,
-  // },
+  color: {
+    type: String,
+    required: [true, 'A color value is required'],
+  },
   // createdAt: {
   //   type: Date,
   //   required: false,

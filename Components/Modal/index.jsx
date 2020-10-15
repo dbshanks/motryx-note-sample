@@ -6,7 +6,9 @@ import {
   Button,
   Radio,
   RadioGroup,
+  Select,
   FormControlLabel,
+  MenuItem,
   FormControl,
   FormLabel,
   Grid,
@@ -15,16 +17,18 @@ import {
 // import CreateIcon from '@material-ui/icons/Create'
 // import NotesIcon from '@material-ui/icons/Notes'
 import useStyles from '@Components/Modal/modal.styles'
+import { StylesContext } from '@material-ui/styles'
 
 export default function InputModal({ handleClose, open }) {
   const classes = useStyles()
-  const [value, setValue] = React.useState('pink')
+  const [color, setColor] = useState('')
+  const [openSelect, setOpenSelect] = useState(false)
 
   const [form, setForm] = useState([
     {
       title: '',
       note: '',
-      // color: '',
+      color: '',
     },
   ])
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -59,7 +63,20 @@ export default function InputModal({ handleClose, open }) {
       ...form,
       [e.target.name]: e.target.value,
     })
+    setColor(e.target.value)
   }
+
+  // const handleCloseSelect = () => {
+  //   setOpenSelect(false)
+  // }
+
+  // const handleSelect = (e) => {
+  //   setColor(true)
+  // }
+
+  // const handleOpenSelect = () => {
+  //   setOpenSelect(true)
+  // }
 
   const validate = () => {
     let err = {}
@@ -69,15 +86,11 @@ export default function InputModal({ handleClose, open }) {
     if (!form.note) {
       err.note = 'A note is required'
     }
-    // if (!form.color) {
-    //   err.color = 'A color is required'
-    // }
+    if (!form.color) {
+      err.color = 'A color is required'
+    }
 
     return err
-  }
-
-  const handleValue = (event) => {
-    setValue(event.target.value)
   }
 
   useEffect(() => {
@@ -89,7 +102,6 @@ export default function InputModal({ handleClose, open }) {
       }
     }
   }, [errors])
-  // getModalStyle is not a pure function, we roll the style only on the first render
 
   const body = (
     <div className={classes.stage}>
@@ -99,34 +111,32 @@ export default function InputModal({ handleClose, open }) {
             <h2 id='simple-modal-title'>Pick a color.</h2>
 
             <FormControl component='fieldset'>
-              <FormLabel component='legend'>Colors</FormLabel>
-              {/* <RadioGroup
-                aria-label='Colors'
+              <RadioGroup
+                aria-label='color'
                 name='color'
-                value={value}
+                value={color}
                 onChange={handleChange}>
-                <FormControlLabel value='red' control={<Radio />} label='Red' />
                 <FormControlLabel
-                  value='blue'
+                  value='#FF3D00'
+                  control={<Radio />}
+                  label='Red'
+                />
+                <FormControlLabel
+                  value='#2196F3'
                   control={<Radio />}
                   label='Blue'
                 />
                 <FormControlLabel
-                  value='pink'
-                  control={<Radio />}
-                  label='Pink'
-                />
-                <FormControlLabel
-                  value='yellow'
+                  value='#FFB300'
                   control={<Radio />}
                   label='Yellow'
                 />
                 <FormControlLabel
-                  value='green'
+                  value='#00E676'
                   control={<Radio />}
                   label='Green'
                 />
-              </RadioGroup> */}
+              </RadioGroup>
             </FormControl>
           </Grid>
           <Grid item xs={8}>
