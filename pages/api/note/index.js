@@ -1,5 +1,5 @@
-import dbConnect from '@Utils/dbconnect'
-import Note from '@Models/notes'
+import dbConnect from '../../../Utils/dbconnect'
+import Note from '../../../Models/notes'
 dbConnect()
 
 export default async (req, res) => {

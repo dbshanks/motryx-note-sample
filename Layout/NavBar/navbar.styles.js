@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     width: '8rem',
   },
   appbar: {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: 'transparent',
     color: theme.palette.common.black,
   },
   toolbar: {

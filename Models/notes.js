@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 
-const NoteSchema = {
+const NoteSchema = new Schema({
   title: {
     type: String,
     required: [true, 'A note needs a title.'],
@@ -13,10 +13,6 @@ const NoteSchema = {
     type: String,
     required: [true, 'A color value is required'],
   },
-  // createdAt: {
-  //   type: Date,
-  //   required: false,
-  // },
-}
+})
 
-module.exports = mongoose.models.Notes || mongoose.model('Note', NoteSchema)
+module.exports = mongoose.models.Note || mongoose.model('Note', NoteSchema)

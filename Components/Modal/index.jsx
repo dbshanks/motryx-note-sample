@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+
 import clsx from 'clsx'
 import {
   Modal,
@@ -14,15 +15,11 @@ import {
   Grid,
   TextField,
 } from '@material-ui/core/'
-// import CreateIcon from '@material-ui/icons/Create'
-// import NotesIcon from '@material-ui/icons/Notes'
-import useStyles from '@Components/Modal/modal.styles'
-import { StylesContext } from '@material-ui/styles'
+import useStyles from './modal.styles'
 
 export default function InputModal({ handleClose, open }) {
   const classes = useStyles()
   const [color, setColor] = useState('')
-  const [openSelect, setOpenSelect] = useState(false)
 
   const [form, setForm] = useState([
     {
@@ -37,7 +34,7 @@ export default function InputModal({ handleClose, open }) {
 
   const createNote = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/not', {
+      const res = await fetch('http://localhost:3000/api/note', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -127,7 +124,7 @@ export default function InputModal({ handleClose, open }) {
                   label='Blue'
                 />
                 <FormControlLabel
-                  value='#FFB300'
+                  value='yellow'
                   control={<Radio />}
                   label='Yellow'
                 />

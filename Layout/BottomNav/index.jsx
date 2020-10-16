@@ -3,8 +3,8 @@ import { BottomNavigation, BottomNavigationAction } from '@material-ui/core'
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import NoteIcon from '@material-ui/icons/NoteAdd'
 import HomeIcon from '@material-ui/icons/Home'
-import useStyles from '@Layout/BottomNav/bottomnav.styles'
-import InputModal from '@Components/Modal'
+import useStyles from './bottomnav.styles'
+import InputModal from '../../Components/Modal'
 
 const BottomNav = () => {
   const classes = useStyles()

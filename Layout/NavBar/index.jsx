@@ -7,7 +7,7 @@ import {
   IconButton,
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
-import useStyles from '@Layout/NavBar/navbar.styles'
+import useStyles from './navbar.styles'
 
 const NavBar = () => {
   const classes = useStyles()

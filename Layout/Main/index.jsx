@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Grid } from '@material-ui/core'
-import NavBar from '@Layout/NavBar'
-import BottomNav from '@Layout/BottomNav'
+import NavBar from '../NavBar'
+import BottomNav from '../BottomNav'
 
 const Main = ({ children }) => {
   return (

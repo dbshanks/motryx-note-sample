@@ -6,6 +6,7 @@ const useStyles = makeStyles({
     bottom: 0,
     left: 0,
     width: '100%',
+    backgroundColor: 'transparent',
   },
 })
 

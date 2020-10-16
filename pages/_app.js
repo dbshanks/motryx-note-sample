@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
-import theme from '@Styles/theme'
-import Main from '@Layout/Main'
+import theme from '../Styles/theme'
+import Main from '../Layout/Main'
 import { CssBaseline, ThemeProvider } from '@material-ui/core'
 
 function MyApp({ Component, pageProps }) {
