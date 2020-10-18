@@ -7,6 +7,10 @@ const useStyles = makeStyles({
     left: 0,
     width: '100%',
     backgroundColor: 'transparent',
+    height: '6rem',
+  },
+  icon: {
+    fontSize: '4.5rem',
   },
 })
 

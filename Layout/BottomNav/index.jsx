@@ -1,10 +1,8 @@
 import { useRef, useState } from 'react'
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
-import NoteIcon from '@material-ui/icons/NoteAdd'
-import HomeIcon from '@material-ui/icons/Home'
-import useStyles from './bottomnav.styles'
 import InputModal from '../../Components/Modal'
+import NoteIcon from '@material-ui/icons/NoteAdd'
+import useStyles from './bottomnav.styles'
 
 const BottomNav = () => {
   const classes = useStyles()
@@ -22,17 +20,16 @@ const BottomNav = () => {
     <BottomNavigation className={classes.root} showLabels>
       <BottomNavigationAction
         label='New Note'
-        icon={<NoteIcon color='secondary' fontSize='large' />}
+        icon={
+          <NoteIcon
+            color='secondary'
+            fontSize='large'
+            className={classes.icon}
+          />
+        }
         onClick={handleOpen}
       />
-      <BottomNavigationAction
-        label='Home'
-        icon={<HomeIcon color='secondary' fontSize='large' />}
-      />
-      <BottomNavigationAction
-        label='Nearby'
-        icon={<LocationOnIcon color='secondary' fontSize='large' />}
-      />
+
       <InputModal handleClose={handleClose} open={open} />
     </BottomNavigation>
   )

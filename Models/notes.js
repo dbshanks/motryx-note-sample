@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose'
+const mongoose = require('mongoose')
 
-const NoteSchema = new Schema({
+const NoteSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, 'A note needs a title.'],

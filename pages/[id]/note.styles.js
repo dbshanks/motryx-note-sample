@@ -6,16 +6,28 @@ const useStyles = makeStyles((theme) => ({
     padding: '1.2rem',
     width: '19rem',
     height: '18rem',
-    cursor: 'pointer',
+    cursor: 'grab',
     zIndex: 100,
   },
   noteTitle: {
     fontWeight: 600,
     color: theme.palette.common.white,
   },
+  noteBodyContainer: {
+    width: '100%',
+    height: '60%',
+  },
+  deleteBar: {
+    width: '100%',
+    textAlign: 'right',
+    color: theme.palette.common.white,
+  },
   noteBody: {
     fontWeight: 100,
     color: theme.palette.common.white,
+  },
+  deleteIcon: {
+    cursor: 'pointer',
   },
 }))
 

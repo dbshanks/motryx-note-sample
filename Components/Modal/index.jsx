@@ -63,18 +63,6 @@ export default function InputModal({ handleClose, open }) {
     setColor(e.target.value)
   }
 
-  // const handleCloseSelect = () => {
-  //   setOpenSelect(false)
-  // }
-
-  // const handleSelect = (e) => {
-  //   setColor(true)
-  // }
-
-  // const handleOpenSelect = () => {
-  //   setOpenSelect(true)
-  // }
-
   const validate = () => {
     let err = {}
     if (!form.title) {
