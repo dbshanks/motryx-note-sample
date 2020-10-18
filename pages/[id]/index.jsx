@@ -7,7 +7,7 @@ import DeleteSweepIcon from '@material-ui/icons/DeleteSweep'
 import useStyles from './note.styles'
 
 const NoteCard = (props) => {
-  const { _id, title, note, color } = props
+  const { _id, title, note, color, constraintsRef } = props
   const classes = useStyles()
 
   const [isDeleting, setIsDeleting] = useState(false)
@@ -40,18 +40,18 @@ const NoteCard = (props) => {
         {isDeleting ? (
           <CircularProgress color='secondary' />
         ) : (
-          <motion.div drag key={title}>
+          <motion.div drag dragConstraints={constraintsRef} key={_id}>
             <Box>
               <Paper
                 style={{ backgroundColor: color }}
                 className={classes.note}>
                 <Box>
-                  <Typography variant='h4' className={classes.noteTitle}>
+                  <Typography variant='h6' className={classes.noteTitle}>
                     {title}
                   </Typography>
                 </Box>
                 <Box className={classes.noteBodyContainer}>
-                  <Typography variant='h5' className={classes.noteBody}>
+                  <Typography variant='body1' className={classes.noteBody}>
                     {note}
                   </Typography>
                 </Box>

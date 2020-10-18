@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-
 import clsx from 'clsx'
 import {
   Modal,
@@ -86,13 +85,16 @@ export default function InputModal({ handleClose, open }) {
   }, [errors])
 
   const body = (
-    <div className={classes.stage}>
+    <div>
       <form onSubmit={handleSubmit} className={classes.form}>
         <Grid container className={classes.paper}>
-          <Grid item xs={4}>
+          <Grid item lg={4}>
             <h2 id='simple-modal-title'>Pick a color.</h2>
 
-            <FormControl component='fieldset'>
+            <FormControl
+              component='fieldset'
+              fullWidth
+              className={classes.formStage}>
               <RadioGroup
                 aria-label='color'
                 name='color'
@@ -100,37 +102,46 @@ export default function InputModal({ handleClose, open }) {
                 onChange={handleChange}>
                 <FormControlLabel
                   value='#D84315'
-                  control={<Radio />}
+                  control={<Radio style={{ color: '#D84315' }} />}
                   label='Red'
                 />
                 <FormControlLabel
                   value='#0277BD'
-                  control={<Radio />}
+                  control={<Radio style={{ color: '#0277BD' }} />}
                   label='Blue'
                 />
                 <FormControlLabel
-                  value='yellow'
-                  control={<Radio />}
-                  label='#F9A825'
+                  value='#F9A825'
+                  control={<Radio style={{ color: '#F9A825' }} />}
+                  label='Yellow'
                 />
                 <FormControlLabel
                   value='#388E3C'
-                  control={<Radio />}
+                  control={<Radio style={{ color: '#388E3C' }} />}
                   label='Green'
+                />
+                <FormControlLabel
+                  value='#D81B60'
+                  control={<Radio style={{ color: '#D81B60' }} />}
+                  label='Pink'
                 />
               </RadioGroup>
             </FormControl>
           </Grid>
-          <Grid item xs={8}>
-            <FormControl component='fieldset'>
+          <Grid item lg={8}>
+            <FormControl fullWidth component='fieldset'>
               <h2 id='simple-modal-title'>Enter a Note</h2>
               <TextField
+                fullWidth
+                variant='filled'
                 label='Title'
                 name='title'
                 className={clsx(classes.textField)}
                 onChange={handleChange}
               />
               <TextField
+                fullWidth
+                variant='filled'
                 label='Notes'
                 multiline
                 rows={10}
@@ -140,9 +151,14 @@ export default function InputModal({ handleClose, open }) {
               />
             </FormControl>
           </Grid>
-          <Button variant='contained' color='secondary' type='submit'>
-            Create Note
-          </Button>
+          <Grid container>
+            <Grid item xs={6}></Grid>
+            <Grid item xs={6} className={classes.buttonContainer}>
+              <Button variant='contained' color='secondary' type='submit'>
+                Create Note
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
       </form>
     </div>

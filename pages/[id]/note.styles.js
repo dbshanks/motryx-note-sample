@@ -12,10 +12,11 @@ const useStyles = makeStyles((theme) => ({
   noteTitle: {
     fontWeight: 600,
     color: theme.palette.common.white,
+    marginBottom: '2rem',
   },
   noteBodyContainer: {
     width: '100%',
-    height: '60%',
+    height: '65%',
   },
   deleteBar: {
     width: '100%',
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.white,
   },
   noteBody: {
-    fontWeight: 100,
+    fontWeight: 400,
     color: theme.palette.common.white,
   },
   deleteIcon: {

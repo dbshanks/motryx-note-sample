@@ -13,12 +13,14 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
   textField: {
-    width: '100%',
-    backgroundColor: theme.palette.common.white,
     marginBottom: '1rem',
   },
   margin: {
     margin: theme.spacing(1),
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
 }))
 
