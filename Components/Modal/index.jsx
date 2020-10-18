@@ -7,11 +7,8 @@ import {
   Button,
   Radio,
   RadioGroup,
-  Select,
   FormControlLabel,
-  MenuItem,
   FormControl,
-  FormLabel,
   Grid,
   TextField,
 } from '@material-ui/core/'
@@ -102,22 +99,22 @@ export default function InputModal({ handleClose, open }) {
                 value={color}
                 onChange={handleChange}>
                 <FormControlLabel
-                  value='#FF3D00'
+                  value='#D84315'
                   control={<Radio />}
                   label='Red'
                 />
                 <FormControlLabel
-                  value='#2196F3'
+                  value='#0277BD'
                   control={<Radio />}
                   label='Blue'
                 />
                 <FormControlLabel
                   value='yellow'
                   control={<Radio />}
-                  label='Yellow'
+                  label='#F9A825'
                 />
                 <FormControlLabel
-                  value='#00E676'
+                  value='#388E3C'
                   control={<Radio />}
                   label='Green'
                 />
