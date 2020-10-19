@@ -3,7 +3,7 @@ import Head from 'next/head';
 import NoteCard from '../Components/NoteCard';
 import fetch from 'isomorphic-unfetch';
 import { motion } from 'framer-motion';
-import useStyles from './home.styles.js';
+import useStyles from '../Styles/home.styles.js';
 
 const Home = ({ data }) => {
   const constraintsRef = useRef();
