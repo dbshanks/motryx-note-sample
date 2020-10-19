@@ -1,9 +1,9 @@
-import React from 'react'
-import { AppBar, Toolbar } from '@material-ui/core'
-import useStyles from './navbar.styles'
+import React from 'react';
+import { AppBar, Toolbar } from '@material-ui/core';
+import useStyles from './navbar.styles';
 
 const NavBar = () => {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -13,7 +13,7 @@ const NavBar = () => {
         </Toolbar>
       </AppBar>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

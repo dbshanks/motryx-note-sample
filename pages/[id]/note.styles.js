@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
   note: {
@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
     width: '19rem',
     height: '18rem',
     cursor: 'grab',
-    zIndex: 100,
   },
   noteTitle: {
     fontWeight: 600,
@@ -30,6 +29,6 @@ const useStyles = makeStyles((theme) => ({
   deleteIcon: {
     cursor: 'pointer',
   },
-}))
+}));
 
-export default useStyles
+export default useStyles;

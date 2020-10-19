@@ -1,41 +1,41 @@
-import dbConnect from '../../../Utils/dbconnect'
-import Note from '../../../Models/notes'
+import dbConnect from '../../../Utils/dbconnect';
+import Note from '../../../Models/notes';
 
-dbConnect()
+dbConnect();
 
 export default async (req, res) => {
   const {
     query: { id },
     method,
-  } = req
+  } = req;
 
   switch (method) {
     case 'GET':
       try {
-        const data = await Note.findById(id)
+        const data = await Note.findById(id);
 
         if (!data) {
-          return res.status(400).json({ success: false })
+          return res.status(400).json({ success: false });
         }
-        res.status(200).json({ success: true, data: data })
+        res.status(200).json({ success: true, data: data });
       } catch (error) {
-        res.status(400).json({ success: false })
+        res.status(400).json({ success: false });
       }
-      break
+      break;
     case 'DELETE':
       try {
-        const deletedData = await Note.deleteOne({ _id: id })
+        const deletedData = await Note.deleteOne({ _id: id });
         if (!deletedData) {
-          return res.status(400).json({ success: false })
+          return res.status(400).json({ success: false });
         }
-        res.status(200).json({ success: true, data: {} })
+        res.status(200).json({ success: true, data: {} });
       } catch (error) {
-        res.status(400).json({ success: false })
-        console.log(error)
+        res.status(400).json({ success: false });
+        console.log(error);
       }
-      break
+      break;
     default:
-      res.status(400).json({ success: false })
-      break
+      res.status(400).json({ success: false });
+      break;
   }
-}
+};

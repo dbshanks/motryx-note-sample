@@ -1,20 +1,20 @@
-import { useRef, useState } from 'react'
-import { BottomNavigation, BottomNavigationAction } from '@material-ui/core'
-import InputModal from '../../Components/Modal'
-import NoteIcon from '@material-ui/icons/NoteAdd'
-import useStyles from './bottomnav.styles'
+import { useRef, useState } from 'react';
+import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import InputModal from '../../Components/Modal';
+import NoteIcon from '@material-ui/icons/NoteAdd';
+import useStyles from './bottomnav.styles';
 
 const BottomNav = () => {
-  const classes = useStyles()
-  const [open, setOpen] = useState(false)
+  const classes = useStyles();
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
-    setOpen(true)
-  }
+    setOpen(true);
+  };
 
   const handleClose = () => {
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
     <BottomNavigation className={classes.root} showLabels>
@@ -32,7 +32,7 @@ const BottomNav = () => {
 
       <InputModal handleClose={handleClose} open={open} />
     </BottomNavigation>
-  )
-}
+  );
+};
 
-export default BottomNav
+export default BottomNav;

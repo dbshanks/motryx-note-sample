@@ -1,29 +1,29 @@
-import dbConnect from '../../../Utils/dbconnect'
-import Note from '../../../Models/notes'
-dbConnect()
+import dbConnect from '../../../Utils/dbconnect';
+import Note from '../../../Models/notes';
+dbConnect();
 
 export default async (req, res) => {
-  const { method } = req
+  const { method } = req;
 
   switch (method) {
     case 'GET':
       try {
-        const dataset = await Note.find({})
-        res.status(200).json({ success: true, data: dataset })
+        const dataset = await Note.find({});
+        res.status(200).json({ success: true, data: dataset });
       } catch (error) {
-        res.status(400).json({ success: false })
+        res.status(400).json({ success: false });
       }
-      break
+      break;
     case 'POST':
       try {
-        const data = await Note.create(req.body)
-        res.status(201).json({ success: true, data: data })
+        const data = await Note.create(req.body);
+        res.status(201).json({ success: true, data: data });
       } catch (error) {
-        res.status(400).json({ success: false })
+        res.status(400).json({ success: false });
       }
-      break
+      break;
     default:
-      res.status(400).json({ success: false })
-      break
+      res.status(400).json({ success: false });
+      break;
   }
-}
+};

@@ -1,7 +1,7 @@
-import { Fragment } from 'react'
-import theme from '../Styles/theme'
-import Main from '../Layout/Main'
-import { CssBaseline, ThemeProvider } from '@material-ui/core'
+import { Fragment } from 'react';
+import theme from '../Styles/theme';
+import Main from '../Layout/Main';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         </Main>
       </ThemeProvider>
     </Fragment>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-import clsx from 'clsx'
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import clsx from 'clsx';
 import {
   Modal,
   Button,
@@ -10,12 +10,12 @@ import {
   FormControl,
   Grid,
   TextField,
-} from '@material-ui/core/'
-import useStyles from './modal.styles'
+} from '@material-ui/core/';
+import useStyles from './modal.styles';
 
 export default function InputModal({ handleClose, open }) {
-  const classes = useStyles()
-  const [color, setColor] = useState('')
+  const classes = useStyles();
+  const [color, setColor] = useState('');
 
   const [form, setForm] = useState([
     {
@@ -23,10 +23,10 @@ export default function InputModal({ handleClose, open }) {
       note: '',
       color: '',
     },
-  ])
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [errors, setErrors] = useState({})
-  const router = useRouter()
+  ]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
+  const router = useRouter();
 
   const createNote = async () => {
     try {
@@ -37,52 +37,52 @@ export default function InputModal({ handleClose, open }) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(form),
-      })
-      router.push('/')
+      });
+      router.push('/');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    let errs = validate()
-    setErrors(errs)
-    setIsSubmitting(true)
-  }
+    e.preventDefault();
+    let errs = validate();
+    setErrors(errs);
+    setIsSubmitting(true);
+  };
 
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
-    })
-    setColor(e.target.value)
-  }
+    });
+    setColor(e.target.value);
+  };
 
   const validate = () => {
-    let err = {}
+    let err = {};
     if (!form.title) {
-      err.title = 'A valid title is required'
+      err.title = 'A valid title is required';
     }
     if (!form.note) {
-      err.note = 'A note is required'
+      err.note = 'A note is required';
     }
     if (!form.color) {
-      err.color = 'A color is required'
+      err.color = 'A color is required';
     }
 
-    return err
-  }
+    return err;
+  };
 
   useEffect(() => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
-        createNote()
+        createNote();
       } else {
-        setIsSubmitting(false)
+        setIsSubmitting(false);
       }
     }
-  }, [errors])
+  }, [errors]);
 
   const body = (
     <div>
@@ -162,7 +162,7 @@ export default function InputModal({ handleClose, open }) {
         </Grid>
       </form>
     </div>
-  )
+  );
 
   return (
     <div>
@@ -174,5 +174,5 @@ export default function InputModal({ handleClose, open }) {
         {body}
       </Modal>
     </div>
-  )
+  );
 }
