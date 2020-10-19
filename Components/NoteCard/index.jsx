@@ -22,9 +22,12 @@ const NoteCard = (props) => {
   const deleteNote = async () => {
     const noteId = _id;
     try {
-      const deleted = await fetch(`http://localhost:3000/api/note/${noteId}`, {
-        method: 'Delete',
-      });
+      const deleted = await fetch(
+        `https://motryx-note.vercel.app/api/note/${noteId}`,
+        {
+          method: 'Delete',
+        }
+      );
       router.push('/');
     } catch (error) {
       console.log(error);

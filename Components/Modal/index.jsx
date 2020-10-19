@@ -30,7 +30,7 @@ export default function InputModal({ handleClose, open }) {
 
   const createNote = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/note', {
+      const res = await fetch('https://motryx-note.vercel.app/api/note', {
         method: 'POST',
         headers: {
           Accept: 'application/json',

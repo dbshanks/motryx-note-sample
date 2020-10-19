@@ -23,7 +23,7 @@ const Home = ({ data }) => {
 };
 
 Home.getInitialProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/note/`);
+  const res = await fetch(`https://motryx-note.vercel.app/api/note/`);
   const { data } = await res.json();
 
   return { data: data };
